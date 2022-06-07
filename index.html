@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="./jquery-3.4.1.slim.min.js"></script>
+		<script type="text/javascript" src="./app.js"></script>
+		<script type="text/javascript" src="./validation.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+		<link rel="stylesheet" type="text/css" href="decoration.css" />
+		<link rel="shortcut icon" href="./resources/logo_ms_packman.jpg">
+	</head>
+	<body>
+		<div class="banner1" layout = "row">
+			<img src="./resources/logo_ms_packman.jpg" width = 20% height= 100px />
+			<div class="banner2" layout = "row">
+				<div class="banner__lables">
+					<div class="banner__text">
+						<input type=button class = "banner_button" style="text-decoration:none" onclick="menu_button_clicked(0)" value="Welcome"/>
+					</div>
+					<div class="banner__text"> | </div>
+					<div class="banner__text">
+						<input type=button class = "banner_button" style="text-decoration:none" onclick="menu_button_clicked(1)" value="Register"/>
+					</div>
+					<div class="banner__text"> | </div>
+					<div class="banner__text">
+						<input type=button class = "banner_button" style="text-decoration:none" onclick="menu_button_clicked(2)" value="Login"/>
+					</div>
+					<div class="banner__text"> | </div>
+					<div class="banner__text">
+						<input type=button class = "banner_button" style="text-decoration:none" onclick="$('#aboutmodal').modal()" value="About"/>					</div>
+				</div>
+			</div>
+<!---------------------------welcome------------------------------------------->
+				<div class = "mainscreen" id = "welcome">
+					<div class="container">
+						<div class="form-group">
+							<h1> this is pac-man! </h1>
+						</div>
+						<div class="form-group">
+							<img src="./resources/logo_ms_packman.jpg" width = 100% height= 200px/>						
+						</div>
+						<input type=button class = "big_button" style="text-decoration:none" onclick="menu_button_clicked(1)" value=" Register here "/>					
+						<input type=button class = "big_button" style="text-decoration:none" onclick="menu_button_clicked(2)" value=" Login here "/>						
+					</div>
+				</div>
+<!---------------------------register------------------------------------------->
+				<div class = "mainscreen" id = "register" hidden = true>					
+					<div class="container">
+						<div class="form-group">
+							<h1 class="text-center text-success">Register for free </h1>
+						</div>
+						<div class="form-group">
+							<p class="text-center"> Please enter your personal details</p>
+						</div>
+						<div class="form-group">
+							<label for ="user" class="form_lable">User name:   </label>
+							<input type="text" class="form_input" name="username" id="usernames" class="form-control">
+							<label id="usercheck" class="input_error" ></label>
+						</div>
+						<div class="form-group">
+							<label for="password" class="form_lable">Password:    </label>
+							<input type="password" class="form_input" name="pass" id="password" class="form-control">
+							<label id="passcheck" class="input_error">	</label>
+						</div>
+						<div class="form-group">
+							<label for="full_name" class="form_lable">Full name:   </label>
+							<input type="text" class="form_input" name="fullname" id="fullnames" class="form-control">
+							<h5 id="fullnamecheck" class="input_error"></h5>
+						</div>
+						<div class="form-group">
+							<label for="user" class="form_lable">Email:       </label>
+							<input type="email" class="form_input" name="email" id="email" required class="form-control">
+							<label id="emailcheck" class="input_error"></label>										
+						</div>
+						<div class="form-group">
+							<label for="user" class="form_lable">Date of birdate:</label>
+							<input type="date" class="form_input" name="date" id="date" required class="form-control">
+							<label id="datecheck" class="input_error"></label>										
+						</div>
+						<input type="button" id="submitbtn" value="Submit" class="btn btn-primary">
+					</div>
+				</div>
+<!-------------------------------------Login------------------------------------------->
+				<div class = "mainscreen" id = "login" hidden = true>
+					<div class="container">
+						<div class="form-group">
+							<h1 class="text-center text-success">Login to start </h1>
+						</div>
+						<div class="form-group">
+							<label for ="user" class="form_lable">User name:   </label>
+							<input type="text" class="form_input" name="username" id="loginuser" class="form-control">
+						</div>
+						<div class="form-group">
+							<label for="password" class="form_lable">Password:    </label>
+							<input type="password" class="form_input" name="pass" id="loginpassword" class="form-control">
+						</div>
+						<input type="button" id="loginbtn" value="Submit" class="btn btn-primary">
+						<label id="userpasscheck" class="input_error">	</label>
+					</div>
+				</div>
+<!--------------------------------------About------------------------------------------->
+				<div class = "mainscreen" id = "about" hidden = true>
+					<!-- Trigger the modal with a button -->
+					<!-- Modal HTML embedded directly into document -->
+					<div id="aboutmodal" class="modal">
+						<div class="container">
+							<div class="form-group">
+								  <h4 class="modal-title">Assignment 2 : Pac-man game</h4>
+							</div>
+							<div class="form-group">
+								  <p><u>Game developers :</u></p>
+								<p>Shahar Weisberger, ID : 313434615</p>
+								  <p>Gal Alon, ID : 205635246</p>
+							</div>
+							<div class="form-group">
+								<p>The way we use jQuery Plugin : we used jQuery modal (for the about function) 
+									and also in other functions such as <u>function menu_button_clicked(x)</u>.</p>
+							</div>
+							<div class="form-group">
+								<p><u>Struggles we had: </u></p>
+								<p>Are mainly struggle was to Understand the connection between the javascript, html and css. </p>
+								<p>Also, it took time to benefit from the language strong capabilities. </p>
+								<p>In the end it doesnt realy matters :)</p>
+								<p>beacause it was a fun learning environment to work on.</p>
+								<p>Enjoy the game we made for you, it wasn't easy...</p>
+								<p>Have a good day.</p>
+							</div>
+						  </div>
+						<a href="#" rel="modal:close">Close</a>
+  					</div>					
+				</div>	
+					
+<!--------------------------------------Game------------------------------------------->
+				<div class = "mainscreen" id = "full_game" hidden = true>
+					<div class="container">
+						<div class="form-group">
+							<label for ="user" ><u>User name</u> : </label>
+							<label id = "useronlyname" ></label>
+						</div>
+						<div class="form-group">
+							<label for="lblScore">SCORE: </label>
+							<input id="lblScore" type="text" size="2" disabled/>
+							<label for="lblTime">   TIME: </label>							
+							<input id="lblTime" type="text" size="2" disabled/>
+							<label for="life1">   LIFE: </label>
+							<input id = "lifelbl" type = "text" size="2" disabled/>
+						</div>
+
+						<div id="game" class="game_flex">
+							<div class="flex1">
+								<canvas id="canvas" height="600" width="600"></canvas>
+							</div>
+							<div class="flex1">
+								<div class="container">
+									<div class="form-group">
+										<label for ="rightkey" class="form_lable">Right:   </label>
+										<label id = "rightdisplay"></label>
+									</div>
+									<div class="form-group">
+										<label for ="leftkey" class="form_lable">Left:   </label>
+										<label id = "leftdisplay"></label>
+									</div>
+									<div class="form-group">
+										<label for ="upkey" class="form_lable">Up:   </label>
+										<label id = "updisplay"></label>
+									</div>
+									<div class="form-group">
+										<label for ="downkey" class="form_lable">Down:   </label>
+										<label id = "downdisplay"></label>								
+									</div>
+									<div class="form-group">
+										<label for ="ballsnumber" class="form_lable">Number of balls:</label>
+										<label id = "ballsdisplay"></label>
+									</div>
+									<div class="form-group">
+										<label for ="ball60" class="form_lable">Color ball 5 points:</label>
+										<input type="color" id = "color1display" disabled/> </label><!--type="color"-->
+									</div>
+									<div class="form-group">
+										<label for ="ball30" class="form_lable">Color ball 15 points:</label>
+										<input type="color" id = "color2display" disabled  /><br>
+									</div>
+									<div class="form-group">
+										<label for ="ball10" class="form_lable">Color ball 25 points:</label>
+										<input type="color" id = "color3display" disabled  /><br>
+									</div>
+									<div class="form-group">
+										<label for ="gametimer" class="form_lable">Time of game:</label>
+										<label id = "timeofgame"></label>
+									</div>
+									<div class="form-group">
+										<label for ="monsters" class="form_lable">Number of monsters:</label>
+										<label id = "monsterslbl"></label>
+									</div>
+									<input type="button" id="restartgamebtn" value="Start new game" class="big_button">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+<!-------------------------------Game------------------------------------------->
+				<div class = "mainscreen" id = "game_setting" hidden = true>
+					<div class="container">
+						<div class="form-group">
+							<label for ="rightkey" class="form_lable">Right:   </label>
+							<input type="text" class="form_input" name="rightkey" id="rightkey" class="form-control">
+						</div>
+						<div class="form-group">
+							<label for ="leftkey" class="form_lable">Left:   </label>
+							<input type="text" class="form_input" name="leftkey" id="leftkey" class="form-control">
+						</div>
+						<div class="form-group">
+							<label for ="upkey" class="form_lable">Up:   </label>
+							<input type="text" class="form_input" name="upkey" id="upkey" class="form-control">
+						</div>
+						<div class="form-group">
+							<label for ="downkey" class="form_lable">Down:   </label>
+							<input type="text" class="form_input" name="downkey" id="downkey" class="form-control">
+						</div>
+						<div class="form-group">
+							<label for ="ballsnumber" class="form_lable">Number of balls between 50-90 (defualt 50):</label>
+							<input type="number" class="form_input" name="ballsnumber" id="ballsnumber" class="form-control">
+							<label id="ballsnumbercheck" class="input_error"></label>
+						</div>
+						<div class="form-group">
+							<label for ="ball60" class="form_lable">Color ball 5 points:</label>
+							<input type="color" id="ball60" name="ball60" value="#FF0000">
+						</div>
+						<div class="form-group">
+							<label for ="ball30" class="form_lable">Color ball 15 points:</label>
+							<input type="color" id="ball30" name="ball30" value="#00FF00">
+						</div>
+						<div class="form-group">
+							<label for ="ball10" class="form_lable">Color ball 25 points:</label>
+							<input type="color" id="ball10" name="ball10" value="#0000FF">
+						</div>
+						<div class="form-group">
+							<label for ="gametimer" class="form_lable">Time of game (default 60 sec):</label>
+							<input type="number" id="gametimer" name="gametimer" >
+							<label id="timercheck" class="input_error"></label>
+						</div>
+						<div class="form-group">
+							<label for ="monsters" class="form_lable">Number of monsters (1-4):</label>
+							<input type="number" id="monsters" name="monsters" >
+							<label id="monstercheck" class="input_error"></label>
+						</div>
+
+						<input type="button" id="randomvaluesbtn" value="Random" >
+						<input type="button" id="startgamebtn" value="Submit" class="btn btn-primary">
+					</div>
+				</div>	
+		</div>
+		<div class="footer">
+			<h4><u>contact us</u> : please email weisbers@post.bgu.ac.il or alonu@post.bgu.ac.il ----- please call : +972526053656 or +972546498610</h4>
+		</div>	
+	</body>
+</html>
